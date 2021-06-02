@@ -53,7 +53,6 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID3}" DisplayName="StateMachine" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -192,7 +191,7 @@
                           <Transition.To>
                             <State x:Name="__ReferenceID4" DisplayName="Good Ending" sap:VirtualizedContainerService.HintSize="134,61.3333333333333" sap2010:WorkflowViewState.IdRef="State_5" IsFinal="True">
                               <State.Entry>
-                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;Your DOB is &quot; + dateB.ToString + &quot;/&quot; + monthB.ToString + &quot;/&quot; + yearB.ToString + &quot;.&quot;]" />
+                                <ui:MessageBox ChosenButton="{x:Null}" Caption="Good Ending" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;Your DOB is &quot; + dateB.ToString + &quot;/&quot; + monthB.ToString + &quot;/&quot; + yearB.ToString + &quot;.&quot;]" />
                               </State.Entry>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -305,9 +304,7 @@
               </Assign.Value>
             </Assign>
           </Transition.Action>
-          <Transition.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(dateB&lt;1 or dateB&gt;31) and counterA&lt;3" />
-          </Transition.Condition>
+          <Transition.Condition>[(dateB&lt;1 or dateB&gt;31) and counterA&lt;3]</Transition.Condition>
         </Transition>
         <Transition DisplayName="Counter Exceed" sap:VirtualizedContainerService.HintSize="451.333333333333,521.333333333333" sap2010:WorkflowViewState.IdRef="Transition_6">
           <sap:WorkflowViewStateService.ViewState>
